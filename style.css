@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eee;
+}
+.container{
+    position: relative;
+    width: 300px;
+    height: 600px;
+    background-color: #666;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 70px 4px;
+}
+.container::before{
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background-color: #000;
+    border-radius: 48px;
+}
+.screen{
+    position: absolute;
+    inset: 3px;
+    background: url(./assets/iPhone-14-Blue.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 48px;
+    border: 10px solid #000;
+    opacity: 0;
+    transition: 0.5s;
+}
+.container:hover .screen{
+    opacity: 1;
+}
+.btn
+{
+    position: absolute;
+    top: 80px;
+    left: -1.5px;
+    width: 3px;
+    height: 26px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background: radial-gradient(#eee, #666, #222);
+    z-index: 10;
+}
+.btn.btn2{
+    top: 160px;
+    height: 40px;
+}
+.btn.btn3{
+    top: 220px;
+    height: 40px;
+}
+.rightSideBtn{
+    position: absolute;
+    top: 150px;
+    right: -1.5px;
+    width: 3px;
+    height: 60px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: radial-gradient(#ccc, #666, #222);
+    z-index: 10;
+}
+.area_popup{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90px;
+    height: 25px;
+    margin-top: 10px;
+    background: #000;
+    border-radius: 20px;
+    transition: .5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.area_popup:hover{
+    width: 180px;
+    height: 25px;
+}
+.area_popup.active{
+    width: 250px;
+    height: 60px;
+    border-radius: 50px;
+}
+.content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    line-height: 25px;
+}
+.content p{
+    color: #fff;
+    font-size: .6em;
+    cursor: default;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.action{
+    position: relative;
+    top: 5px;
+    color: #fff;
+    display: flex;
+    gap: 12px;
+    transition: .5s;
+    visibility: hidden;
+    opacity: 0;
+}
+.area_popup.active .action{
+    top: 12px;
+}
+ion-icon.red{
+    color: #fd443b;
+    transform: rotate(135deg);
+    cursor: pointer;
+    transition: .5s;
+}
+ion-icon.green{
+    color: #31d059;
+    cursor: pointer;
+    transition: .5s;
+}
+.area_popup:hover p,
+.area_popup.active p,
+.area_popup:hover .action,
+.area_popup.active .action{
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.25s;
+}
+.area_popup.active ion-icon.red{
+    background-color: #fd443b;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #fd443b;
+    margin-right: 12px;
+}
+.area_popup.active ion-icon.green{
+    background-color: #31d059;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #31d059;
+    margin-right: 8px;
+}
+.details{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.details .imgBx{
+    position: relative;
+    width: 0;
+    height: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.area_popup.active .details .imgBx{
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+.details .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
