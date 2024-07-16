@@ -2,11 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iphone 14 frame</title>
     <link rel="stylesheet" href="style.css">
-    <title>Iphone14 frame</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="screen">
+            <div class="area_popup">
+                <div class="content">
+                    <div class="details">
+                        <div class="imgBx">
+                            <img src="./assets/oncode-logo.jpg" alt="who_call">
+                        </div>
+                        <p>onCode Calling</p>
+                    </div>
+                    <div class="action">
+                        <ion-icon name="call" class="red"></ion-icon>
+                        <ion-icon name="call" class="green"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i class="btn btn1"></i>
+        <i class="btn btn2"></i>
+        <i class="btn btn3"></i>
+        <i class="rightSideBtn"></i>
+    </div>
+    <script>
+        let popup = document.querySelector('.area_popup');
+        popup.onclick = function(){
+            popup.classList.toggle('active')
+        }
+    </script>
 </body>
 </html>
